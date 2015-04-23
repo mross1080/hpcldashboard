@@ -1,6 +1,60 @@
 extends layout
 
 block content
-  .container(style="background-color:rgb(237, 237, 237);")
-    h1= title
-    p Welcome to #{title}
+  .container-fluid
+    //would wrap in a foreach(user):
+    div.row(style="background-color:rgb(237, 237, 237);")
+      div(class='col-xs-8 col-xs-offset-2 col-xs-10 col-xs-offset-2 main')
+        h1.page-header Current Job
+        div.placeholders(class='row')
+          div.placeholder(class='col-xs-6 col-xs-3')
+            img(id='thumb' src='http://placehold.it/200/4CD5D9/000000')
+            h4 CPU Time
+            span.text-muted Value -> bound
+          div.placeholder(class='col-xs-6 col-xs-3')
+            img(id='thumb' src='http://placehold.it/200/4CD5D9/000000')
+            h4 Memory Used
+            span.text-muted Value -> bound
+          div.placeholder(class='col-xs-6 col-xs-3 placeholder')
+            img(id='thumb' src='http://placehold.it/200/4CD5D9/000000')
+            h4 Number of clusters
+            span.text-muted Value -> bound
+    div.row(style="background-color:rgb(169,169,169); margin-top:20px;")
+      div(class='col-xs-8 col-xs-offset-2 col-xs-10 col-xs-offset-2 main')
+        h1.page-header Previous Jobs
+        div.table-responsive(style='padding-top: 40px')
+          table(class='table table-striped')
+            thead
+              tr
+                th CPU Time
+                th Time Run
+                th Number of Clusters Used
+                th Memory Used
+                th Directory
+                th Command
+                th Completion
+            tbody
+              tr
+                td 124
+                td 12412341
+                td 1241241
+                td 12424124
+                td /usr/asdasd/asda
+                td sudo cmd aasda
+                td Successful
+              tr
+                td 124
+                td 12412341
+                td 1241241
+                td 12424124
+                td /usr/asdasd/asda
+                td sudo cmd aasda
+                td Successful
+              tr
+                td 124
+                td 12412341
+                td 1241241
+                td 12424124
+                td /usr/asdasd/asda
+                td sudo cmd aasda
+                td Successful

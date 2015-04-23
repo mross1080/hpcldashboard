@@ -1,25 +1,24 @@
 doctype html
 html
   head
-    title HDFS Dashboard
+    title HPCL Dashboard
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css') 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
-    header
-      .row
-        .col-xs-4.col-md-3.col-md-offset-2.col-l-4.col-xl-4
-          a(href="/" class="")
-            img(id="thumb" src="")
-        .col-xs-6.col-md-4.col-l-4.col-xl-4
-          h1 HDFS Dashboard
+    nav(class='navbar')
+      div.container
+        div.navbar-header
+          h1 HPCL Dashboard
+        div.navbar
+          ul(class='nav navbar-nav navbar-right')
 
-    nav.navbar.navbar-static-top.menubar
-      .container
-        .col-md-offset-1.col-md-10
-          .nav-bar-header
-          div#navbar
+
+
+
           
-    .container
-      .wrapper
+    .container-fluid
+      wrapper
         block content
    
