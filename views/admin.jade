@@ -10,38 +10,21 @@ block content
             table(class='table table-bordered table-hover table-condensed')
               thead
                 tr 
-                  th Job
-                  th Time Run
-                  th Number of Clusters Used
+                  th JobID
+                  th RunTime
+                  th Memory Requested
                   th Memory Used
                   th Directory
                   th Command
-                  th Completion
               tbody
-                tr
-                  td 124
-                  td 12412341
-                  td 1241241
-                  td 12424124
-                  td /usr/asdasd/asda
-                  td sudo cmd aasda
-                  td Successful
-                tr
-                  td 124
-                  td 12412341
-                  td 1241241
-                  td 12424124
-                  td /usr/asdasd/asda
-                  td sudo cmd aasda
-                  td Successful
-                tr
-                  td 124
-                  td 12412341
-                  td 1241241
-                  td 12424124
-                  td /usr/asdasd/asda
-                  td sudo cmd aasda
-                  td Successful
+                each job in jobs  
+                  tr
+                    td #{job.jobID}
+                    td #{job.runTime}
+                    td #{job.memRequested}
+                    td #{job.memUsed}
+                    td #{job.directory}
+                    td #{job.commandUsed}
         h3 User_Name
         div.table-responsive(style='padding-top: 40px')
             table(class='table table-bordered table-hover table-condensed')
