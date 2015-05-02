@@ -12,20 +12,25 @@ block content
                 thead
                   tr 
                     th JobID
-                    th RunTime
+                    th UTime
                     th Memory Requested
                     th Memory Used
-                    th Directory
-                    th Command
+                    th CPU Used
+                    th Efficiency
+                    th Max Memory
+                    th Swap Used
+
                 tbody
                   each job in user.jobs  
                     tr
                       td #{job.jobID}
-                      td #{job.runTime}
+                      td #{job.utime} Seconds
                       td #{job.memRequested}
                       td #{job.memUsed}
-                      td #{job.directory}
-                      td #{job.commandUsed}
+                      td #{job.cpuUsed}
+                      td #{job.efficiency}
+                      td #{job.maxMemory}
+                      td #{job.swap_used}
         h3 User_Name
         div.table-responsive(style='padding-top: 40px')
             table(class='table table-bordered table-hover table-condensed')

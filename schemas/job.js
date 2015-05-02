@@ -3,8 +3,10 @@ mongoose.model("Job",{
 	jobID: String,
 	memRequested:  String,
 	memUsed: String,
-	directory: String,
-	commandUsed: String,
-	runTime: String,
-	user: String
+	utime: String,
+	cpuUsed: String,
+	efficiency: String,
+	user:String,
+	maxMemory: String,
+	swap_used: String
 })
