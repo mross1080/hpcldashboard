@@ -2,6 +2,13 @@
  * GET admin page.
  */
 
+Job = mon
+
 exports.admin = function(req, res){
-  res.render('admin', { title: 'HPCL Administrator Dashboard' });
+
+	Job.find({},function(err,docs){
+		res.render('admin', { jobs: docs, title: 'HPCL Administrator Dashboard' });
+
+	})
+  
 };
