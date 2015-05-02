@@ -10,6 +10,8 @@ var login = require('./routes/login')
 var admin = require('./routes/admin')
 var http = require('http');
 var path = require('path');
+var MongoStore = require('connect-mongo')(express);
+
 
 var app = express();
 
