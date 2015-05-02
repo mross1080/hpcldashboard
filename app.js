@@ -55,6 +55,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/login', login.login)
 app.get('/admin', admin.admin)
+app.post('/changeadminstatus', user.changeadminstatus)
 
 app.post('/login', 
   passport.authenticate('local', { successRedirect: '/', 

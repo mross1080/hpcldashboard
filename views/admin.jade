@@ -6,7 +6,16 @@ block content
       div(class='col-xs-8 col-xs-offset-2 col-xs-10 col-xs-offset-2 main')
         h1.page-header.text-center Admin View
         each user in users
-          h3 #{user.username}
+          h3 UserName: #{user.username}
+          form(action="/changeadminstatus", method="post")
+            if !user.admin
+              input(type="hidden", name="privlige", value="grant")
+              input(type="hidden", name="user", value="#{user.username}")
+              input(class="btn btn-success" type="submit" value="Grant Admin Privliges")
+            else
+              input(type="hidden", name="privlige", value="remove")
+              input(type="hidden", name="user", value="#{user.username}")
+              input(class="btn btn-danger" type="submit" value="Remove Admin Privliges")
           div.table-responsive(style='padding-top: 40px; padding-bottom:20px;')
               table(class='table table-bordered table-hover table-condensed')
                 thead
