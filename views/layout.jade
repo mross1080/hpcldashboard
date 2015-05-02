@@ -5,20 +5,17 @@ html
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css') 
+    link(href='/img/favicons.png', rel='icon')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  body
+  body(style='background-color:rgb(250,250,250)')
     nav(class='navbar')
       div.container
         div.navbar-header
           h1 HPCL Dashboard
         div.navbar
           ul(class='nav navbar-nav navbar-right')
-
-
-
-
-          
-    .container-fluid
+            
+    .container-fluid        
       wrapper
         block content
-   
+     
