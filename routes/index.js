@@ -4,5 +4,12 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'HPCL Dashboard' });
+
+	User.findOne({username: "zjiang"},function(err,docs){
+		console.log(docs.jobs)
+
+		res.render('index', { user: docs, title: 'Your usage statistics' });
+
+	})
 };
+

@@ -20,6 +20,30 @@ block content
   div.row(style="background-color:rgb(169,169,169); margin-top:20px;")
     div(class='col-xs-8 col-xs-offset-2 col-xs-10 col-xs-offset-2 main')
       h1.page-header Previous Jobs
+      div.table-responsive(style='padding-top: 40px; padding-bottom:20px;')
+              table(class='table table-bordered table-hover table-condensed')
+                thead
+                  tr 
+                    th JobID
+                    th UTime
+                    th Memory Requested
+                    th Memory Used
+                    th CPU Used
+                    th Efficiency
+                    th Max Memory
+                    th Swap Used
+
+                tbody
+                  each job in user.jobs  
+                    tr
+                      td #{job.jobID}
+                      td #{job.utime} Seconds
+                      td #{job.memRequested}
+                      td #{job.memUsed}
+                      td #{job.cpuUsed}
+                      td #{job.efficiency}
+                      td #{job.maxMemory}
+                      td #{job.swap_used}
       div.table-responsive(style='padding-top: 40px')
         table(class='table table-bordered table-hover table-condensed')
           thead
