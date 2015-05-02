@@ -5,5 +5,6 @@ mongoose.model("Job",{
 	memUsed: String,
 	directory: String,
 	commandUsed: String,
-	runTime: String
+	runTime: String,
+	user: String
 })
