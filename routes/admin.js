@@ -15,15 +15,12 @@ exports.admin = function(req, res){
 
 	User.find({},function(err,docs){
 		console.log(docs)
+		for(i in docs){
+			console.log(docs[i].username)
+		}
+		res.render('admin', { users: docs, title: 'HPCL Administrator Dashboard' });
+
 	})
-
-  console.log(userInfo)
-
-
-	// Job.find({}},function(err,docs){
-	// 	res.render('admin', { jobs: docs, title: 'HPCL Administrator Dashboard' });
-	// 	console.log(docs)
-	// })
   
 };
 

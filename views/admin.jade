@@ -5,26 +5,27 @@ block content
     div.row(style='background-color:rgb(237, 237, 237);')
       div(class='col-xs-8 col-xs-offset-2 col-xs-10 col-xs-offset-2 main')
         h1.page-header.text-center Admin View
-        h3 User_Name
-        div.table-responsive(style='padding-top: 40px; padding-bottom:20px;')
-            table(class='table table-bordered table-hover table-condensed')
-              thead
-                tr 
-                  th JobID
-                  th RunTime
-                  th Memory Requested
-                  th Memory Used
-                  th Directory
-                  th Command
-              tbody
-                each job in jobs  
-                  tr
-                    td #{job.jobID}
-                    td #{job.runTime}
-                    td #{job.memRequested}
-                    td #{job.memUsed}
-                    td #{job.directory}
-                    td #{job.commandUsed}
+        each user in users
+          h3 #{user.username}
+          div.table-responsive(style='padding-top: 40px; padding-bottom:20px;')
+              table(class='table table-bordered table-hover table-condensed')
+                thead
+                  tr 
+                    th JobID
+                    th RunTime
+                    th Memory Requested
+                    th Memory Used
+                    th Directory
+                    th Command
+                tbody
+                  each job in user.jobs  
+                    tr
+                      td #{job.jobID}
+                      td #{job.runTime}
+                      td #{job.memRequested}
+                      td #{job.memUsed}
+                      td #{job.directory}
+                      td #{job.commandUsed}
         h3 User_Name
         div.table-responsive(style='padding-top: 40px')
             table(class='table table-bordered table-hover table-condensed')
