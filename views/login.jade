@@ -1,10 +1,7 @@
-extends layout
+extends loginlayout
 
 block content
-
-
-
-  form.form-signin(action='/login', method='post')
+  form.form-signin(action='/login', method='post' id='loginform')
     h2.form-signin-heading Please sign in here.
     label(for='username', class='sr-only') Username
     input(type='text' class='form-control' placeholder='Username' name='username' required autofocus)

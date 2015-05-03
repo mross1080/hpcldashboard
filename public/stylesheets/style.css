@@ -5,6 +5,7 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 title {
   font: 40px;
 }
@@ -23,6 +24,13 @@ td {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px; 
+}
+
+#loginform {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; 
+  background-color: #eee;
 }
 
 /*
