@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  form.form-signin
+
+
+
+  form.form-signin(action='/login', method='post')
     h2.form-signin-heading Please sign in here.
     label(for='username', class='sr-only') Username
     input(type='text' class='form-control' placeholder='Username' name='username' required autofocus)

@@ -2,12 +2,13 @@
 /*
  * GET users listing.
  */
- var mongoose = require("mongoose");
-var db = require('../db');
-var jobSchema= require("../schemas/job")
-Job = mongoose.model("Job")
 
-
+// var mongoose = require("mongoose");
+// var db = require('../db');
+// var jobSchema= require("../schemas/job")
+// Job = mongoose.model("Job")
+var db = require('../schemas/db.js');
+var User = db.userModel;
 
 exports.list = function(req, res){
   res.send("respond with a resource");
@@ -15,7 +16,7 @@ exports.list = function(req, res){
 
 exports.changeadminstatus = function(req,res){
 	console.log(req.body)
-	User.findOne({username: req.body.user},function(err,user){
+	db.userModel.findOne({username: req.body.user},function(err,user){
 		console.log(user)
 		if(req.body.privlige == 'grant'){
 			user.admin = true;
@@ -25,7 +26,7 @@ exports.changeadminstatus = function(req,res){
 
 		user.save(function (err) {
         if(err) {
-            console.error('ERROR!');
+            console.error(err);
         } else{
         	res.redirect("admin")
         }

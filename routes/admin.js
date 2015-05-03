@@ -2,14 +2,9 @@
  * GET admin page.
  */
 
-var mongoose = require("mongoose");
-var db = require('../db');
-var jobSchema= require("../schemas/job")
-var userSchema = require("../schemas/user")
-Job = mongoose.model("Job")
-User = mongoose.model("User")
-
-
+var db = require('../schemas/db.js');
+var Job = db.jobModel;
+var User = db.userModel;
 
 exports.admin = function(req, res){
 
