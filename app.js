@@ -3,7 +3,7 @@
  */
 var db = require('./schemas/db.js'),
     express = require('express'),
-    http= reqire('http'),
+    http= require('http'),
     app = express(),
     authentication = require('./authentication.js'),
     routes = require('./routes');
