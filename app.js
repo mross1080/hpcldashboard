@@ -3,6 +3,7 @@
  */
 var db = require('./schemas/db.js'),
     express = require('express'),
+    http= reqire('http'),
     app = express(),
     authentication = require('./authentication.js'),
     routes = require('./routes');
@@ -47,7 +48,11 @@ app.get('/admin', admin.admin)
 app.post('/changeadminstatus', user.changeadminstatus)
 
 //begin server
-app.listen(3000, function(){
-  console.log("Express server listening on port 1337");
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
 });
+
+// app.listen(3000, function(){
+//   console.log("Express server listening on port 1337");
+// });
 
