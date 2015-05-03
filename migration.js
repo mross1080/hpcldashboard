@@ -1,4 +1,5 @@
 var csv = require("fast-csv");
+var bcrypt = require('bcrypt'), SALT_WORK_FACTOR = 10;
 var mongoose = require("mongoose");
 mongoose.model("Job",{
 	jobID: String,
@@ -31,6 +32,30 @@ var userSchema = new Schema({
   utilizationPercentage: { type: String, required: true, unique: true }
 });
 
+userSchema.pre('save', function(next){
+  var user = this;
+  
+  if(!user.isModified('password')) return next();
+
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+    if(err) return next(err);
+
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      if(err) return next(err);
+      user.password = hash;
+      next();
+    });
+  });
+});
+
+//encapsulates password verification into user model
+userSchema.methods.comparePassword = function(candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+    if(err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
 var User = mongoose.model('User', userSchema);
 
 
@@ -58,9 +83,9 @@ mongoose.connect('mongodb://cloudarchitect:bigdatainthecloud@ds031792.mongolab.c
 	users = ["ypark", "zjiang"]
 	// function seeJobs()
 
-	User.remove({},function(err,docs){
-		console.log("collection remobved")
-	})
+	// User.remove({},function(err,docs){
+	// 	console.log("collection remobved")
+	// })
 
 
 //   mongoose.connection.collections['User'].drop( function(err) {
@@ -72,7 +97,10 @@ mongoose.connect('mongodb://cloudarchitect:bigdatainthecloud@ds031792.mongolab.c
 //  //  for(i in users){
 //  //  	console.log(users[i])
 
-   // seedUsers(users[0])
+   seedUsers(users[1])
+   // User.where("username","ypark").find(function(err,docs){
+   // 	console.log(docs[0].username)
+   // })
 
 
   

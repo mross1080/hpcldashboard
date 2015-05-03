@@ -10,7 +10,7 @@ var job = db.jobModel;
 exports.index = function(req, res){
 
 
-	db.userModel.findOne({username: "zjiang"},function(err,docs){
+	db.userModel.findOne({username: "ypark"},function(err,docs){
 		//console.log(docs.jobs);
     
 
