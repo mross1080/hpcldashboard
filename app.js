@@ -47,7 +47,7 @@ app.get('/admin', admin.admin)
 app.post('/changeadminstatus', user.changeadminstatus)
 
 //begin server
-app.listen(1337, function(){
+app.listen(3000, function(){
   console.log("Express server listening on port 1337");
 });
 
